@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>adVmeta Studio — GFX Design in 24 Hours</title>
+  <meta name="description" content="Custom logo and GFX design packages by adVmeta Studio. Fast 24-hour turnaround, transparent pricing, and bold Y2K-inspired branding." />
+  <style>
+    :root{
+      --bg:#06070a; --panel:#10131a; --line:#272d3a; --text:#f5f7ff;
+      --muted:#a9b0c3; --red:#ff315c; --cyan:#65e7ff; --gold:#f7c95c;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at top right,rgba(101,231,255,.12),transparent 28%),
+      radial-gradient(circle at top left,rgba(255,49,92,.15),transparent 30%),var(--bg);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1180px;margin:auto;padding:0 22px}
+    nav{position:sticky;top:0;z-index:20;background:rgba(6,7,10,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:25px;font-weight:900;letter-spacing:-1.5px}
+    .logo span:first-child{color:var(--red);text-shadow:0 0 18px rgba(255,49,92,.7)}
+    .logo span:last-child{color:white;text-shadow:0 0 18px rgba(101,231,255,.55)}
+    .nav-links{display:flex;gap:24px;color:var(--muted);font-size:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:14px 21px;font-weight:800;background:linear-gradient(90deg,var(--red),#bd3cff);box-shadow:0 0 30px rgba(255,49,92,.2)}
+    .btn.alt{background:transparent;color:var(--text);box-shadow:none}
+    header{padding:94px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:42px;align-items:center}
+    .eyebrow{color:var(--cyan);font-size:13px;letter-spacing:2.2px;font-weight:900;text-transform:uppercase}
+    h1{font-size:clamp(46px,8vw,88px);line-height:.94;letter-spacing:-4px;margin:18px 0 22px}
+    h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--cyan);text-shadow:0 0 20px rgba(101,231,255,.2)}
+    .lead{color:var(--muted);font-size:19px;line-height:1.65;max-width:720px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .hero-card{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.12);padding:30px;border-radius:28px;box-shadow:0 20px 80px rgba(0,0,0,.45)}
+    .hero-card .big{font-size:58px;font-weight:950;color:var(--gold)}
+    .mini{color:var(--muted);line-height:1.6}
+    section{padding:82px 0}
+    .section-title{font-size:42px;letter-spacing:-2px;margin:0 0 12px}
+    .section-copy{color:var(--muted);max-width:680px;margin:0 0 34px;line-height:1.7}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .package{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:24px;position:relative;overflow:hidden}
+    .package:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--red),var(--cyan))}
+    .package h3{font-size:24px;margin:10px 0 4px}
+    .price{font-size:38px;font-weight:950;margin:14px 0}
+    .package ul{list-style:none;padding:0;margin:18px 0;color:var(--muted);line-height:1.8}
+    .package li:before{content:"✓";color:var(--cyan);margin-right:8px}
+    .tag{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .work{min-height:220px;border-radius:24px;border:1px solid var(--line);padding:22px;display:flex;align-items:flex-end;background:
+      linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),
+      linear-gradient(135deg,rgba(255,49,92,.45),rgba(101,231,255,.25));}
+    .work:nth-child(2){background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),linear-gradient(135deg,#26124f,#fc4e9a)}
+    .work:nth-child(3){background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),linear-gradient(135deg,#0e4451,#d9712a)}
+    .work:nth-child(4){background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),linear-gradient(135deg,#1b2f67,#9cdcff)}
+    .work:nth-child(5){background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),linear-gradient(135deg,#343434,#d9b24c)}
+    .work:nth-child(6){background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.05)),linear-gradient(135deg,#431313,#ff5959)}
+    .quote{font-size:28px;line-height:1.45;max-width:900px}
+    .contact{background:linear-gradient(135deg,rgba(255,49,92,.13),rgba(101,231,255,.1));border:1px solid var(--line);border-radius:30px;padding:42px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+    footer{padding:34px 0 50px;color:var(--muted);font-size:14px}
+    @media(max-width:900px){
+      .hero-grid,.grid4{grid-template-columns:1fr 1fr}.portfolio{grid-template-columns:1fr 1fr}.nav-links{display:none}
+    }
+    @media(max-width:620px){
+      header{padding-top:58px}.hero-grid,.grid4,.portfolio{grid-template-columns:1fr}h1{letter-spacing:-2.5px}.contact{display:block}.contact .btn{margin-top:18px}.hero-card{margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo"><span>adV</span><span>meta</span></div>
+    <div class="nav-links">
+      <a href="#packages">Packages</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn" href="#contact">Start a Project</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Logo Design • Branding • GFX</div>
+      <h1>Make your brand <em>impossible to ignore.</em></h1>
+      <p class="lead">Custom logos and bold visual identities designed by adVmeta Studio. Fast 24-hour delivery, transparent packages, and original work built around your vision.</p>
+      <div class="cta-row">
+        <a class="btn" href="#packages">View Packages</a>
+        <a class="btn alt" href="#portfolio">See Client Work</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="tag">Signature promise</div>
+      <div class="big">24H</div>
+      <h2>Your first logo concept within 24 hours.</h2>
+      <p class="mini">Fast does not mean generic. Every concept is built with direct communication, strong visual direction, and revisions based on your feedback.</p>
+    </div>
+  </div>
+</header>
+
+<section id="packages">
+  <div class="wrap">
+    <h2 class="section-title">Choose your package.</h2>
+    <p class="section-copy">Straightforward pricing for new resellers, creators, businesses, and established brands.</p>
+    <div class="grid4">
+      <article class="package">
+        <div class="tag">Starter</div><h3>Copper</h3><div class="price">$29</div>
+        <ul><li>1 logo concept</li><li>2 revisions</li><li>PNG + JPG</li><li>24-hour first draft</li></ul>
+        <a class="btn alt" href="#contact">Choose Copper</a>
+      </article>
+      <article class="package">
+        <div class="tag">Most Popular</div><h3>Silver</h3><div class="price">$69</div>
+        <ul><li>3 logo concepts</li><li>5 revisions</li><li>Transparent PNG</li><li>Social profile version</li></ul>
+        <a class="btn" href="#contact">Choose Silver</a>
+      </article>
+      <article class="package">
+        <div class="tag">Business</div><h3>Gold</h3><div class="price">$129</div>
+        <ul><li>5 logo concepts</li><li>8 revisions</li><li>Brand color palette</li><li>Banner + profile kit</li></ul>
+        <a class="btn alt" href="#contact">Choose Gold</a>
+      </article>
+      <article class="package">
+        <div class="tag">Full Identity</div><h3>Platinum</h3><div class="price">$249</div>
+        <ul><li>7 premium concepts</li><li>Priority revisions</li><li>Complete social kit</li><li>Mini brand guide</li></ul>
+        <a class="btn alt" href="#contact">Choose Platinum</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <h2 class="section-title">Client work.</h2>
+    <p class="section-copy">A growing portfolio across reselling, automotive, food service, quality control, fashion, and lifestyle brands.</p>
+    <div class="portfolio">
+      <div class="work"><div><div class="tag">Reseller Brand</div><h3>Ski-2-Lana</h3></div></div>
+      <div class="work"><div><div class="tag">Reseller Brand</div><h3>J&amp;J Finds</h3></div></div>
+      <div class="work"><div><div class="tag">Mobile Business</div><h3>Coffee Truck</h3></div></div>
+      <div class="work"><div><div class="tag">Industrial</div><h3>Parker Seal Division</h3></div></div>
+      <div class="work"><div><div class="tag">Automotive</div><h3>B58 ANTHY</h3></div></div>
+      <div class="work"><div><div class="tag">Marketplace</div><h3>adVmeta Resale</h3></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="tag">Our principle</div>
+    <p class="quote">“Principle is greater than capital. Capital occurs when principle is mastered.”</p>
+    <p class="section-copy">adVmeta was built around transparency, originality, and respect for the customer. Every project receives direct attention and clear communication from concept to delivery.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="tag">Ready to build?</div>
+        <h2 class="section-title">Let’s create your logo.</h2>
+        <p class="section-copy" style="margin-bottom:0">Send your business name, favorite colors, preferred style, and any inspiration. Your first concept will be delivered within 24 hours.</p>
+      </div>
+      <a class="btn" href="mailto:hello@advmeta.studio">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 adVmeta Studio. Principle over profit.</div>
+</footer>
+</body>
+</html>
