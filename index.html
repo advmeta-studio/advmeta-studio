@@ -1,828 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050507" />
-  <meta name="description" content="adVmeta Studio creates custom logos, brand identities, social graphics, and premium GFX with transparent pricing and secure Stripe checkout." />
-  <meta name="keywords" content="logo designer, custom logo design, branding studio, graphic design, GFX artist, California logo designer, adVmeta Studio" />
-  <meta name="author" content="adVmeta Studio" />
-  <meta property="og:title" content="adVmeta Studio — Principle Over Profit" />
-  <meta property="og:description" content="Custom logos and premium brand identities with transparent packages and secure Stripe checkout." />
-  <meta property="og:image" content="advmeta-wide.jpeg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://advmeta-studio.vercel.app" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07070a">
+  <meta name="description" content="adVmeta Studio creates custom logos, luxury branding, product advertising, and GFX with transparent pricing and secure Stripe checkout.">
+  <meta property="og:title" content="adVmeta Studio — Principle Over Profit">
+  <meta property="og:description" content="Custom logos, branding systems, promotional graphics, and premium GFX.">
+  <meta property="og:image" content="portfolio-ethreal-customs.jpeg">
+  <meta property="og:url" content="https://advmeta-studio.vercel.app">
   <title>adVmeta Studio — Principle Over Profit</title>
-
   <style>
-    :root{
-      --bg:#050507;
-      --panel:#0d0d12;
-      --panel-2:#12121a;
-      --text:#f8f8fc;
-      --muted:#aaaab8;
-      --line:#2a2a36;
-      --pink:#ff2cbf;
-      --purple:#8b4dff;
-      --blue:#39c8ff;
-      --gold:#ffc83d;
-      --success:#6ee7b7;
-      --radius:28px;
-      --shadow:0 24px 80px rgba(0,0,0,.45);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 8% 4%,rgba(255,44,191,.14),transparent 28%),
-        radial-gradient(circle at 92% 8%,rgba(57,200,255,.11),transparent 28%),
-        radial-gradient(circle at 50% 54%,rgba(139,77,255,.07),transparent 35%),
-        var(--bg);
-      line-height:1.55;
-      overflow-x:hidden;
-    }
-
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    button,input,textarea{font:inherit}
-    .wrap{width:min(1180px,calc(100% - 36px));margin:auto}
-    .eyebrow{
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-weight:900;
-      font-size:.76rem;
-    }
-
-    nav{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(5,5,7,.82);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .nav{
-      min-height:84px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:13px;
-      font-weight:950;
-      font-size:1.15rem;
-      letter-spacing:-.02em;
-    }
-
-    .brand img{
-      width:54px;
-      height:54px;
-      border-radius:50%;
-      object-fit:cover;
-      border:1px solid #454553;
-      box-shadow:0 0 28px rgba(255,44,191,.18);
-    }
-
-    .navLinks{
-      display:flex;
-      align-items:center;
-      gap:25px;
-      color:#dddde6;
-      font-weight:800;
-      font-size:.94rem;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:52px;
-      padding:0 24px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
-      color:var(--text);
-      font-weight:900;
-      transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
-      cursor:pointer;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      border-color:#56566a;
-    }
-
-    .btnPrimary{
-      border:none;
-      background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));
-      box-shadow:0 14px 34px rgba(139,77,255,.28);
-    }
-
-    .hero{
-      padding:74px 0 62px;
-    }
-
-    .heroBanner{
-      border:1px solid var(--line);
-      border-radius:32px;
-      overflow:hidden;
-      background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
-    }
-
-    .heroBanner img{
-      width:100%;
-      aspect-ratio:16/7;
-      object-fit:cover;
-      border-bottom:1px solid var(--line);
-    }
-
-    .heroGrid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:48px;
-      padding:44px;
-      align-items:center;
-    }
-
-    h1{
-      font-size:clamp(3rem,8vw,6.4rem);
-      line-height:.9;
-      margin:14px 0 22px;
-      letter-spacing:-.065em;
-    }
-
-    .outline{
-      color:transparent;
-      -webkit-text-stroke:1.4px var(--blue);
-      text-shadow:0 0 26px rgba(57,200,255,.16);
-    }
-
-    .lead{
-      color:var(--muted);
-      font-size:1.12rem;
-      max-width:700px;
-    }
-
-    .heroActions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:13px;
-      margin-top:30px;
-    }
-
-    .promise{
-      padding:28px;
-      border:1px solid var(--line);
-      border-radius:26px;
-      background:rgba(255,255,255,.025);
-    }
-
-    .promise strong{
-      display:block;
-      font-size:4.4rem;
-      color:var(--gold);
-      line-height:1;
-      letter-spacing:-.06em;
-    }
-
-    .trustBar{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-      margin-top:20px;
-    }
-
-    .trustItem{
-      padding:18px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(255,255,255,.02);
-      text-align:center;
-      color:#d7d7e0;
-      font-weight:800;
-      font-size:.92rem;
-    }
-
-    section{padding:80px 0}
-
-    .sectionTitle{
-      font-size:clamp(2.4rem,6vw,5rem);
-      line-height:1;
-      margin:12px 0 18px;
-      letter-spacing:-.055em;
-    }
-
-    .sectionLead{
-      color:var(--muted);
-      font-size:1.1rem;
-      max-width:760px;
-    }
-
-    .pricing{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:24px;
-      margin-top:44px;
-    }
-
-    .card{
-      position:relative;
-      padding:36px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:
-        linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.008)),
-        var(--panel);
-      overflow:hidden;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      top:0;
-      height:4px;
-      background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple),var(--blue));
-    }
-
-    .card.featured{
-      border-color:#8a7420;
-      box-shadow:0 0 0 1px rgba(255,200,61,.08),var(--shadow);
-    }
-
-    .popular{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:7px 12px;
-      border-radius:999px;
-      color:#111;
-      background:var(--gold);
-      font-size:.72rem;
-      font-weight:950;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-
-    .planName{
-      font-size:2.4rem;
-      font-weight:950;
-      margin:12px 0 0;
-      letter-spacing:-.04em;
-    }
-
-    .price{
-      font-size:4rem;
-      font-weight:950;
-      margin:8px 0 6px;
-      letter-spacing:-.065em;
-    }
-
-    .price small{
-      font-size:1rem;
-      color:var(--muted);
-      letter-spacing:0;
-    }
-
-    .card ul{
-      list-style:none;
-      padding:0;
-      margin:26px 0;
-    }
-
-    .card li{
-      color:#c5c5cf;
-      margin:13px 0;
-      padding-left:26px;
-      position:relative;
-    }
-
-    .card li::before{
-      content:"✦";
-      position:absolute;
-      left:0;
-      color:var(--pink);
-    }
-
+    :root{--bg:#07070a;--panel:#121218;--panel2:#181821;--text:#fafafe;--muted:#b8b8c4;--line:#30303b;--pink:#ff28bf;--purple:#8a4cff;--blue:#3bc8ff;--gold:#ffc83d;--r:26px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 10% 5%,#32113f 0,transparent 28%),radial-gradient(circle at 95% 10%,#102a55 0,transparent 26%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .wrap{width:min(1180px,calc(100% - 28px));margin:auto}
+    nav{position:sticky;top:0;z-index:50;background:rgba(7,7,10,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;font-size:1.15rem} .brand img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+    .navlinks{display:flex;gap:22px;font-weight:800;color:#ddd} .cta{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));font-weight:950}
+    .hero{padding:44px 0 30px} .hero-shell{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#21172d,#11131c)}
+    .hero-media{background:#050507;display:flex;align-items:center;justify-content:center;max-height:560px;overflow:hidden} .hero-media img{width:100%;height:auto;object-fit:contain}
+    .hero-copy{padding:38px} .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:950}
+    h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.92;letter-spacing:-.06em;margin:14px 0 20px} .outline{color:transparent;-webkit-text-stroke:1.5px var(--blue)}
+    .lead{color:var(--muted);font-size:1.08rem;max-width:760px} .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--line);font-weight:900} .primary{border:0;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue))}
+    section{padding:70px 0} .title{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1;letter-spacing:-.055em;margin:10px 0 16px}
+    .pricing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px} .card{padding:32px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(160deg,#181820,#0f0f14);position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple),var(--blue))}
+    .featured{border-color:#8d741f} .badge{display:inline-block;background:var(--gold);color:#111;border-radius:999px;padding:7px 12px;font-weight:950;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+    .plan{font-size:2.4rem;font-weight:950;margin:12px 0 0} .price{font-size:4rem;font-weight:950;letter-spacing:-.06em;margin:10px 0} .price small{font-size:1rem;color:var(--muted);letter-spacing:0}
+    ul{list-style:none;padding:0;margin:24px 0} li{padding-left:24px;margin:12px 0;color:#ccc;position:relative} li:before{content:"✦";position:absolute;left:0;color:var(--pink)}
     .card .btn{width:100%}
-
-    .process{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-      margin-top:42px;
-    }
-
-    .step{
-      padding:30px;
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:var(--panel);
-    }
-
-    .stepNumber{
-      width:42px;
-      height:42px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      color:#111;
-      background:linear-gradient(135deg,var(--gold),#ff9f2f);
-      font-weight:950;
-      margin-bottom:18px;
-    }
-
-    .portfolio{
-      display:grid;
-      grid-template-columns:1.35fr .65fr;
-      gap:24px;
-      margin-top:42px;
-    }
-
-    .work{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:var(--panel);
-    }
-
-    .work img{
-      width:100%;
-      height:100%;
-      min-height:340px;
-      object-fit:cover;
-    }
-
-    .workText{padding:25px}
-
-    .portfolioStack{
-      display:grid;
-      gap:24px;
-    }
-
-    .principles{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:26px;
-      align-items:stretch;
-    }
-
-    .principleCard{
-      padding:38px;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--panel);
-    }
-
-    .highlight{
-      font-size:clamp(2.5rem,5vw,4.8rem);
-      line-height:.98;
-      letter-spacing:-.055em;
-      margin:10px 0 18px;
-    }
-
-    .faq{
-      display:grid;
-      gap:14px;
-      margin-top:36px;
-    }
-
-    details{
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:var(--panel);
-      padding:0 22px;
-    }
-
-    summary{
-      cursor:pointer;
-      list-style:none;
-      padding:22px 0;
-      font-weight:900;
-    }
-
-    summary::-webkit-details-marker{display:none}
-    details p{color:var(--muted);margin:0 0 22px}
-
-    .cta{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:24px;
-      align-items:center;
-      padding:42px;
-      border:1px solid var(--line);
-      border-radius:30px;
-      background:
-        radial-gradient(circle at 20% 20%,rgba(255,44,191,.12),transparent 35%),
-        radial-gradient(circle at 85% 25%,rgba(57,200,255,.12),transparent 30%),
-        var(--panel);
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:34px 0 50px;
-      color:#858594;
-    }
-
-    .footerRow{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    @media(max-width:900px){
-      .navLinks{display:none}
-      .heroGrid,.pricing,.process,.portfolio,.principles,.cta{grid-template-columns:1fr}
-      .trustBar{grid-template-columns:repeat(2,1fr)}
-      .heroGrid{padding:30px 24px}
-      .heroBanner img{aspect-ratio:16/9}
-      .card{padding:30px 26px}
-      .price{font-size:3.5rem}
-      .cta .btn{width:100%}
-    }
-
-    @media(max-width:540px){
-      .wrap{width:min(100% - 24px,1180px)}
-      .nav{min-height:76px}
-      .brand img{width:46px;height:46px}
-      .nav .btn{padding:0 17px;min-height:48px}
-      .trustBar{grid-template-columns:1fr}
-      section{padding:66px 0}
-      .hero{padding-top:42px}
-      .heroBanner{border-radius:24px}
-    }
-  
-    /* v3 motion and premium effects */
-    .ambient{
-      position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden
-    }
-    .orb{
-      position:absolute;border-radius:50%;filter:blur(70px);opacity:.18;
-      animation:floatOrb 12s ease-in-out infinite alternate
-    }
-    .orb.one{width:320px;height:320px;background:var(--pink);left:-90px;top:12%}
-    .orb.two{width:360px;height:360px;background:var(--blue);right:-120px;top:34%;animation-delay:-4s}
-    .orb.three{width:300px;height:300px;background:var(--purple);left:35%;bottom:-100px;animation-delay:-8s}
-    @keyframes floatOrb{to{transform:translate3d(35px,-45px,0) scale(1.12)}}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.visible{opacity:1;transform:none}
-    .heroBanner,.card,.step,.work,.principleCard,.cta{will-change:transform}
-    .card:hover,.step:hover,.work:hover,.principleCard:hover{
-      transform:translateY(-5px);border-color:#4b4b5d;
-      box-shadow:0 22px 70px rgba(0,0,0,.34)
-    }
-    .card,.step,.work,.principleCard{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
-    .floatingCta{
-      position:fixed;right:18px;bottom:18px;z-index:120;
-      min-height:54px;padding:0 22px;border-radius:999px;
-      display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));
-      color:#fff;font-weight:950;box-shadow:0 16px 45px rgba(139,77,255,.4);
-      border:1px solid rgba(255,255,255,.18)
-    }
-    .contactGrid{
-      display:grid;grid-template-columns:1fr .9fr;gap:24px;margin-top:38px
-    }
-    .contactPanel{
-      padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)
-    }
-    .contactPanel a{color:var(--blue);font-weight:900}
-    .portfolioNote{
-      padding:24px;border:1px dashed #474759;border-radius:20px;
-      color:var(--muted);margin-top:24px
-    }
-    @media(max-width:900px){
-      .contactGrid{grid-template-columns:1fr}
-      .floatingCta{left:18px;right:18px}
-    }
-    @media(prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-      .reveal{opacity:1;transform:none}
-    }
-
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px} .project{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--panel);transition:.2s}
+    .project:hover{transform:translateY(-4px)} .project img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#050507} .project-copy{padding:20px} .project-copy h3{margin:0 0 6px} .project-copy p{margin:0;color:var(--muted)}
+    .reviews-note{padding:22px;border:1px dashed #555568;border-radius:18px;color:var(--muted);margin-top:24px}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px} .review{padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--panel)} .stars{color:var(--gold);letter-spacing:.12em}
+    .review .draft{display:inline-block;margin-top:14px;padding:5px 9px;border-radius:999px;background:#2a2030;color:#ffc6ef;font-size:.72rem;font-weight:900;text-transform:uppercase}
+    .contact{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:36px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#25162f,#111828)}
+    footer{border-top:1px solid var(--line);padding:30px 0 46px;color:#8f8f9b}
+    @media(max-width:850px){.navlinks{display:none}.pricing,.gallery,.reviews,.contact{grid-template-columns:1fr}.hero-copy{padding:28px 24px}.card{padding:28px 24px}.price{font-size:3.5rem}.hero-media{max-height:none}}
   </style>
 </head>
-
 <body>
-  <div class="ambient" aria-hidden="true">
-    <span class="orb one"></span>
-    <span class="orb two"></span>
-    <span class="orb three"></span>
+<nav><div class="wrap nav">
+  <a class="brand" href="#top"><img src="advmeta-round.jpeg" alt="adVmeta Studio logo"><span>adVmeta<br>Studio</span></a>
+  <div class="navlinks"><a href="#packages">Packages</a><a href="#portfolio">Portfolio</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+  <a class="cta" href="#packages">Start a Project</a>
+</div></nav>
+
+<main id="top">
+<header class="hero"><div class="wrap"><div class="hero-shell">
+  <div class="hero-media"><img src="advmeta-wide.jpeg" alt="adVmeta Studio brand banner"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Luxury Branding • Logo Design • GFX</p>
+    <h1>Build a brand with <span class="outline">presence.</span></h1>
+    <p class="lead">Custom logos, brand systems, product advertising, and bold promotional graphics designed by adVmeta Studio. Transparent packages. Secure Stripe checkout. Original work.</p>
+    <div class="actions"><a class="btn primary" href="#packages">View Packages</a><a class="btn" href="#portfolio">See Portfolio</a></div>
   </div>
-  <nav>
-    <div class="wrap nav">
-      <a class="brand" href="#top">
-        <img src="advmeta-round.jpeg" alt="adVmeta Studio logo">
-        <span>adVmeta<br>Studio</span>
-      </a>
+</div></div></header>
 
-      <div class="navLinks">
-        <a href="#packages">Packages</a>
-        <a href="#process">Process</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </div>
+<section id="packages"><div class="wrap">
+  <p class="eyebrow">Transparent Pricing</p><h2 class="title">Choose your design level.</h2><p class="lead">One-time purchases processed securely through Stripe.</p>
+  <div class="pricing">
+    <article class="card"><p class="eyebrow">Starter</p><div class="plan">Copper</div><div class="price">$20 <small>one time</small></div><ul><li>3 custom logo concepts</li><li>5 revisions</li><li>High-resolution PNG + JPG files</li><li>Commercial-use license</li><li>First concepts within 24 hours</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/bJeaEX2LjgwHfru0FFfIs00">Choose Copper</a></article>
+    <article class="card featured"><span class="badge">Most Popular</span><div class="plan">Silver</div><div class="price">$50 <small>one time</small></div><ul><li>5 custom logo concepts</li><li>7 revisions</li><li>Transparent PNG, JPG + PDF files</li><li>Social-media profile version</li><li>Commercial-use license</li><li>Priority support and 24-hour delivery</li></ul><a class="btn primary" target="_blank" rel="noopener" href="https://buy.stripe.com/7sY8wP2Lj94f7Z21JJfIs01">Choose Silver</a></article>
+    <article class="card"><p class="eyebrow">Complete Branding</p><div class="plan">Gold</div><div class="price">$100 <small>one time</small></div><ul><li>10 custom logo concepts</li><li>Unlimited revisions</li><li>Primary + secondary logo versions</li><li>Brand color palette + font recommendations</li><li>Social-media profile graphics</li><li>PNG, JPG, PDF + vector source files</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/9B600jclT5S3fru4VVfIs02">Choose Gold</a></article>
+    <article class="card"><p class="eyebrow">Full Identity</p><div class="plan">Platinum</div><div class="price">$200 <small>one time</small></div><ul><li>Unlimited custom logo concepts</li><li>Unlimited revisions</li><li>Complete logo suite and brand identity</li><li>Business-card design</li><li>Social profile + banner graphics</li><li>Brand style guide + source files</li><li>Commercial rights and VIP priority support</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/6oU9AT85D0xJcfi2NNfIs03">Choose Platinum</a></article>
+  </div>
+</div></section>
 
-      <a class="btn btnPrimary" href="#packages">Start a Project</a>
-    </div>
-  </nav>
+<section id="portfolio"><div class="wrap">
+  <p class="eyebrow">Selected Work</p><h2 class="title">A portfolio built to stand out.</h2><p class="lead">Logo systems, service-business branding, reseller identities, automotive concepts, and product campaigns.</p>
+  <div class="gallery"><article class="project">
+      <img src="portfolio-ski2lana.jpeg" alt="Ski-2-Lana portfolio project" loading="lazy">
+      <div class="project-copy"><h3>Ski-2-Lana</h3><p>Reseller branding • neon winter identity</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-nostalgic-coffee.jpeg" alt="Nostalgic Coffee portfolio project" loading="lazy">
+      <div class="project-copy"><h3>Nostalgic Coffee</h3><p>Mobile coffee-bus logo concepts</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-advmeta-concepts.jpeg" alt="adVmeta Concepts portfolio project" loading="lazy">
+      <div class="project-copy"><h3>adVmeta Concepts</h3><p>Logo exploration and visual systems</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-marcel-watch.jpeg" alt="Marcel Swiss Watch Campaign portfolio project" loading="lazy">
+      <div class="project-copy"><h3>Marcel Swiss Watch Campaign</h3><p>Luxury product storytelling</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-bibi-pro-diver.jpeg" alt="BIBI Pro Diver Campaign portfolio project" loading="lazy">
+      <div class="project-copy"><h3>BIBI Pro Diver Campaign</h3><p>Product ad and promotional design</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-b58-anthy.jpeg" alt="B58 Anthy portfolio project" loading="lazy">
+      <div class="project-copy"><h3>B58 Anthy</h3><p>Automotive-inspired identity</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-watch-gurus.jpeg" alt="The Watch Gurus portfolio project" loading="lazy">
+      <div class="project-copy"><h3>The Watch Gurus</h3><p>Multi-concept brand development</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-ethreal-customs.jpeg" alt="Ethreal Customs portfolio project" loading="lazy">
+      <div class="project-copy"><h3>Ethreal Customs</h3><p>Automotive luxury branding system</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-mm-junk.jpeg" alt="M&amp;M Junk Solutions portfolio project" loading="lazy">
+      <div class="project-copy"><h3>M&amp;M Junk Solutions</h3><p>High-impact service-business advertising</p></div>
+    </article>
+<article class="project">
+      <img src="portfolio-jrp-construction.jpeg" alt="JRP Construction portfolio project" loading="lazy">
+      <div class="project-copy"><h3>JRP Construction</h3><p>Construction logo concept suite</p></div>
+    </article></div>
+</div></section>
 
-  <main id="top">
-    <header class="hero">
-      <div class="wrap">
-        <div class="heroBanner">
-          <img src="advmeta-wide.jpeg" alt="adVmeta Studio branding banner">
+<section id="reviews"><div class="wrap">
+  <p class="eyebrow">Client Feedback</p><h2 class="title">Review section ready for verified quotes.</h2>
+  <div class="reviews-note"><strong>Important:</strong> The three cards below are clearly marked as draft copy. Replace each one with a real client quote and name before presenting them as testimonials.</div>
+  <div class="reviews">
+    <article class="review"><div class="stars">★★★★★</div><p>“The concepts captured the direction immediately, and the final logo gave the brand a much stronger presence.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“Fast communication, multiple strong options, and revisions that actually followed the feedback.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
+    <article class="review"><div class="stars">★★★★★</div><p>“The finished graphics looked polished across social media, product listings, and promotional materials.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
+  </div>
+</div></section>
 
-          <div class="heroGrid">
-            <div>
-              <p class="eyebrow">Luxury Branding • Logo Design • GFX</p>
-              <h1>Build a brand with <span class="outline">presence.</span></h1>
-              <p class="lead">Custom logos, bold visual identities, and polished brand assets designed by adVmeta Studio. Transparent packages. Direct communication. Original work.</p>
+<section id="contact"><div class="wrap contact">
+  <div><p class="eyebrow">Project Inquiries</p><h2 class="title">Let’s build something memorable.</h2><p class="lead">After checkout, email your business name, package, colors, slogan, reference images, and preferred direction.</p></div>
+  <a class="btn primary" href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">Email adVmeta Studio</a>
+</div></section>
+</main>
 
-              <div class="heroActions">
-                <a class="btn btnPrimary" href="#packages">View Packages</a>
-                <a class="btn" href="#portfolio">See Portfolio</a>
-              </div>
-            </div>
-
-            <aside class="promise">
-              <p class="eyebrow">Signature Promise</p>
-              <strong>24H</strong>
-              <h2>Your first concepts within 24 hours.</h2>
-              <p class="lead">Fast does not mean generic. Every project is shaped around your business, audience, colors, and visual direction.</p>
-            </aside>
-          </div>
-        </div>
-
-        <div class="trustBar">
-          <div class="trustItem">Secure Stripe Checkout</div>
-          <div class="trustItem">Original Custom Concepts</div>
-          <div class="trustItem">Commercial-Use Rights</div>
-          <div class="trustItem">Principle Over Profit</div>
-        </div>
-      </div>
-    </header>
-
-    <section id="packages">
-      <div class="wrap">
-        <p class="eyebrow">Transparent Pricing</p>
-        <h2 class="sectionTitle">Choose your design level.</h2>
-        <p class="sectionLead">Each package is a one-time purchase. Your Stripe checkout opens securely in a new tab.</p>
-
-        <div class="pricing">
-          <article class="card">
-            <p class="eyebrow">Starter</p>
-            <div class="planName">Copper</div>
-            <div class="price">$20 <small>one time</small></div>
-            <ul>
-              <li>3 custom logo concepts</li>
-              <li>5 revisions</li>
-              <li>High-resolution PNG + JPG files</li>
-              <li>Commercial-use license</li>
-              <li>First concepts within 24 hours</li>
-            </ul>
-            <a class="btn" href="https://buy.stripe.com/bJeaEX2LjgwHfru0FFfIs00" target="_blank" rel="noopener">Choose Copper</a>
-          </article>
-
-          <article class="card featured">
-            <span class="popular">Most Popular</span>
-            <div class="planName">Silver</div>
-            <div class="price">$50 <small>one time</small></div>
-            <ul>
-              <li>5 custom logo concepts</li>
-              <li>7 revisions</li>
-              <li>Transparent PNG, JPG + PDF files</li>
-              <li>Social-media profile version</li>
-              <li>Commercial-use license</li>
-              <li>Priority support and 24-hour delivery</li>
-            </ul>
-            <a class="btn btnPrimary" href="https://buy.stripe.com/7sY8wP2Lj94f7Z21JJfIs01" target="_blank" rel="noopener">Choose Silver</a>
-          </article>
-
-          <article class="card">
-            <p class="eyebrow">Complete Branding</p>
-            <div class="planName">Gold</div>
-            <div class="price">$100 <small>one time</small></div>
-            <ul>
-              <li>10 custom logo concepts</li>
-              <li>Unlimited revisions</li>
-              <li>Primary + secondary logo versions</li>
-              <li>Brand color palette + font recommendations</li>
-              <li>Social-media profile graphics</li>
-              <li>PNG, JPG, PDF + vector source files</li>
-            </ul>
-            <a class="btn" href="https://buy.stripe.com/9B600jclT5S3fru4VVfIs02" target="_blank" rel="noopener">Choose Gold</a>
-          </article>
-
-          <article class="card">
-            <p class="eyebrow">Full Identity</p>
-            <div class="planName">Platinum</div>
-            <div class="price">$200 <small>one time</small></div>
-            <ul>
-              <li>Unlimited custom logo concepts</li>
-              <li>Unlimited revisions</li>
-              <li>Complete logo suite and brand identity</li>
-              <li>Business-card design</li>
-              <li>Social profile + banner graphics</li>
-              <li>Brand style guide + source files</li>
-              <li>Commercial rights and VIP priority support</li>
-            </ul>
-            <a class="btn" href="https://buy.stripe.com/6oU9AT85D0xJcfi2NNfIs03" target="_blank" rel="noopener">Choose Platinum</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="wrap">
-        <p class="eyebrow">How It Works</p>
-        <h2 class="sectionTitle">From checkout to concept.</h2>
-
-        <div class="process">
-          <article class="step">
-            <div class="stepNumber">1</div>
-            <h3>Choose your package</h3>
-            <p class="lead">Select the design level that fits your business and complete secure checkout through Stripe.</p>
-          </article>
-
-          <article class="step">
-            <div class="stepNumber">2</div>
-            <h3>Send your direction</h3>
-            <p class="lead">Share your business name, slogan, colors, industry, references, and the feeling you want your brand to communicate.</p>
-          </article>
-
-          <article class="step">
-            <div class="stepNumber">3</div>
-            <h3>Review your concepts</h3>
-            <p class="lead">Receive your first concepts, select your direction, and use the included revisions to finalize the design.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <div class="wrap">
-        <p class="eyebrow">Portfolio</p>
-        <h2 class="sectionTitle">Bold work for real businesses.</h2>
-        <p class="sectionLead">adVmeta Studio designs for independent businesses, resellers, service companies, creators, and emerging brands.</p>
-
-        <div class="portfolio">
-          <article class="work">
-            <img src="advmeta-wide.jpeg" alt="adVmeta Studio wide branding presentation">
-          </article>
-
-          <div class="portfolioStack">
-            <article class="work">
-              <img src="advmeta-round.jpeg" alt="adVmeta Studio round logo">
-            </article>
-
-            <article class="work">
-              <div class="workText">
-                <p class="eyebrow">Designed to Perform</p>
-                <h3>Every concept is created for practical use.</h3>
-                <p class="lead">Profile photos, storefronts, social media, packaging, business cards, listings, banners, and marketing content.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="portfolioNote">More client work is being added as projects are approved for public display. adVmeta Studio never posts confidential client material without permission.</div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap principles">
-        <article class="principleCard">
-          <p class="eyebrow">Our Philosophy</p>
-          <h2 class="highlight">Principle over profit.</h2>
-          <p class="lead">Trust creates value. Every project receives direct communication, transparent expectations, and original design work built around the client—not recycled templates.</p>
-        </article>
-
-        <article class="principleCard">
-          <p class="eyebrow">Client Standard</p>
-          <h2 class="highlight">Clear. Original. Reliable.</h2>
-          <p class="lead">You should understand what you are purchasing, what files you will receive, and how the revision process works before the project begins.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="wrap">
-        <p class="eyebrow">Frequently Asked Questions</p>
-        <h2 class="sectionTitle">Before you order.</h2>
-
-        <div class="faq">
-          <details>
-            <summary>What happens after I pay?</summary>
-            <p>Send your business name, slogan, preferred colors, industry, reference images, and any design ideas through the contact method you already use with adVmeta Studio. Your package and payment will identify the level of work included.</p>
-          </details>
-
-          <details>
-            <summary>Does 24-hour delivery mean the entire project is finished?</summary>
-            <p>The 24-hour promise refers to your first concepts or first draft. Final completion depends on your revision requests and response time.</p>
-          </details>
-
-          <details>
-            <summary>Are the designs original?</summary>
-            <p>Yes. Concepts are built around your project direction. Inspiration images help communicate style, but your delivered design should be customized to your brand.</p>
-          </details>
-
-          <details>
-            <summary>What file types will I receive?</summary>
-            <p>File types depend on the package. Copper includes PNG and JPG. Higher tiers add transparent, PDF, social-media, and vector/source-file options as listed.</p>
-          </details>
-
-          <details>
-            <summary>Can I use the logo commercially?</summary>
-            <p>Yes. Commercial-use rights are included as stated in each package. Save your project files and payment receipt for your business records.</p>
-          </details>
-
-          <details>
-            <summary>Are payments secure?</summary>
-            <p>Yes. Package payments are processed through Stripe's hosted checkout pages. adVmeta Studio does not directly collect or store your card information on this website.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="contact">
-      <div class="wrap">
-        <p class="eyebrow">Contact adVmeta Studio</p>
-        <h2 class="sectionTitle">Let’s build something memorable.</h2>
-        <div class="contactGrid">
-          <article class="contactPanel">
-            <h3>Project inquiries</h3>
-            <p class="lead">Already purchased a package? Email your business name, slogan, preferred colors, industry, reference images, and the direction you want the brand to take.</p>
-            <p><a href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">advmetaofficial@gmail.com</a></p>
-            <a class="btn btnPrimary" href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">Email adVmeta Studio</a>
-          </article>
-          <article class="contactPanel">
-            <h3>Response standard</h3>
-            <p class="lead">Project messages are reviewed as quickly as possible. Include your Stripe receipt or package name so your order can be matched immediately.</p>
-            <ul>
-              <li>Direct communication</li>
-              <li>Clear package expectations</li>
-              <li>Secure Stripe payments</li>
-              <li>Worldwide digital delivery</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap cta">
-        <div>
-          <p class="eyebrow">Ready to Build?</p>
-          <h2 class="sectionTitle">Choose your package.</h2>
-          <p class="sectionLead">Start with Copper or select a complete brand identity package for a larger launch.</p>
-        </div>
-        <a class="btn btnPrimary" href="#packages">View Pricing</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footerRow">
-      <span>© 2026 adVmeta Studio. Original design services. Worldwide digital delivery.</span>
-      <span>Principle Over Profit.</span>
-    </div>
-  </footer>
-
-  <a class="floatingCta" href="#packages" aria-label="View design packages">Start Your Project</a>
-
-  <script>
-    const revealTargets = document.querySelectorAll(
-      ".card,.step,.work,.principleCard,.contactPanel,.cta,.faq details"
-    );
-    revealTargets.forEach(el => el.classList.add("reveal"));
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealTargets.forEach(el => observer.observe(el));
-  </script>
-
-</body>
-</html>
+<footer><div class="wrap">© 2026 adVmeta Studio · Principle Over Profit · https://advmeta-studio.vercel.app</div></footer>
+</body></html>

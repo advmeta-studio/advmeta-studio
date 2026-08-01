@@ -1,10 +1,3 @@
-adVmeta Studio
-
-Upload these files to the root of your GitHub repository:
-- index.html
-- advmeta-wide.jpeg
-- advmeta-round.jpeg
-- README.txt
-
-Commit message:
-Launch adVmeta Studio v3
+Upload every file in this folder to the root of your GitHub repository and commit directly to main.
+Live URL: https://advmeta-studio.vercel.app
+The review cards are draft placeholders and must be replaced with verified client quotes before being represented as testimonials.
