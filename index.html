@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050507" />
-  <meta name="description" content="adVmeta Studio — premium custom logo design, branding, and GFX with transparent pricing and fast delivery." />
+  <meta name="description" content="adVmeta Studio creates custom logos, brand identities, social graphics, and premium GFX with transparent pricing and secure Stripe checkout." />
+  <meta name="keywords" content="logo designer, custom logo design, branding studio, graphic design, GFX artist, California logo designer, adVmeta Studio" />
+  <meta name="author" content="adVmeta Studio" />
+  <meta property="og:title" content="adVmeta Studio — Principle Over Profit" />
+  <meta property="og:description" content="Custom logos and premium brand identities with transparent packages and secure Stripe checkout." />
+  <meta property="og:image" content="advmeta-wide.jpeg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://advmeta-studio.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>adVmeta Studio — Principle Over Profit</title>
 
   <style>
@@ -457,10 +465,64 @@
       .hero{padding-top:42px}
       .heroBanner{border-radius:24px}
     }
+  
+    /* v3 motion and premium effects */
+    .ambient{
+      position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden
+    }
+    .orb{
+      position:absolute;border-radius:50%;filter:blur(70px);opacity:.18;
+      animation:floatOrb 12s ease-in-out infinite alternate
+    }
+    .orb.one{width:320px;height:320px;background:var(--pink);left:-90px;top:12%}
+    .orb.two{width:360px;height:360px;background:var(--blue);right:-120px;top:34%;animation-delay:-4s}
+    .orb.three{width:300px;height:300px;background:var(--purple);left:35%;bottom:-100px;animation-delay:-8s}
+    @keyframes floatOrb{to{transform:translate3d(35px,-45px,0) scale(1.12)}}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .heroBanner,.card,.step,.work,.principleCard,.cta{will-change:transform}
+    .card:hover,.step:hover,.work:hover,.principleCard:hover{
+      transform:translateY(-5px);border-color:#4b4b5d;
+      box-shadow:0 22px 70px rgba(0,0,0,.34)
+    }
+    .card,.step,.work,.principleCard{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+    .floatingCta{
+      position:fixed;right:18px;bottom:18px;z-index:120;
+      min-height:54px;padding:0 22px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));
+      color:#fff;font-weight:950;box-shadow:0 16px 45px rgba(139,77,255,.4);
+      border:1px solid rgba(255,255,255,.18)
+    }
+    .contactGrid{
+      display:grid;grid-template-columns:1fr .9fr;gap:24px;margin-top:38px
+    }
+    .contactPanel{
+      padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)
+    }
+    .contactPanel a{color:var(--blue);font-weight:900}
+    .portfolioNote{
+      padding:24px;border:1px dashed #474759;border-radius:20px;
+      color:var(--muted);margin-top:24px
+    }
+    @media(max-width:900px){
+      .contactGrid{grid-template-columns:1fr}
+      .floatingCta{left:18px;right:18px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .reveal{opacity:1;transform:none}
+    }
+
   </style>
 </head>
 
 <body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb one"></span>
+    <span class="orb two"></span>
+    <span class="orb three"></span>
+  </div>
   <nav>
     <div class="wrap nav">
       <a class="brand" href="#top">
@@ -473,6 +535,7 @@
         <a href="#process">Process</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <a class="btn btnPrimary" href="#packages">Start a Project</a>
@@ -637,6 +700,7 @@
             </article>
           </div>
         </div>
+        <div class="portfolioNote">More client work is being added as projects are approved for public display. adVmeta Studio never posts confidential client material without permission.</div>
       </div>
     </section>
 
@@ -695,6 +759,32 @@
       </div>
     </section>
 
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="eyebrow">Contact adVmeta Studio</p>
+        <h2 class="sectionTitle">Let’s build something memorable.</h2>
+        <div class="contactGrid">
+          <article class="contactPanel">
+            <h3>Project inquiries</h3>
+            <p class="lead">Already purchased a package? Email your business name, slogan, preferred colors, industry, reference images, and the direction you want the brand to take.</p>
+            <p><a href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">advmetaofficial@gmail.com</a></p>
+            <a class="btn btnPrimary" href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">Email adVmeta Studio</a>
+          </article>
+          <article class="contactPanel">
+            <h3>Response standard</h3>
+            <p class="lead">Project messages are reviewed as quickly as possible. Include your Stripe receipt or package name so your order can be matched immediately.</p>
+            <ul>
+              <li>Direct communication</li>
+              <li>Clear package expectations</li>
+              <li>Secure Stripe payments</li>
+              <li>Worldwide digital delivery</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="wrap cta">
         <div>
@@ -709,9 +799,30 @@
 
   <footer>
     <div class="wrap footerRow">
-      <span>© 2026 adVmeta Studio.</span>
+      <span>© 2026 adVmeta Studio. Original design services. Worldwide digital delivery.</span>
       <span>Principle Over Profit.</span>
     </div>
   </footer>
+
+  <a class="floatingCta" href="#packages" aria-label="View design packages">Start Your Project</a>
+
+  <script>
+    const revealTargets = document.querySelectorAll(
+      ".card,.step,.work,.principleCard,.contactPanel,.cta,.faq details"
+    );
+    revealTargets.forEach(el => el.classList.add("reveal"));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealTargets.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>

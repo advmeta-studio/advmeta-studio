@@ -1,15 +1,10 @@
-adVmeta Studio v2
+adVmeta Studio
 
-Contents:
+Upload these files to the root of your GitHub repository:
 - index.html
-- advmeta-round.jpeg
 - advmeta-wide.jpeg
+- advmeta-round.jpeg
+- README.txt
 
-Deployment:
-Upload all three website files to the root of your GitHub repository, replacing the existing index.html and image files. Commit directly to the main branch. Vercel should redeploy automatically.
-
-Stripe package links are already connected:
-Copper $20
-Silver $50
-Gold $100
-Platinum $200
+Commit message:
+Launch adVmeta Studio v3
