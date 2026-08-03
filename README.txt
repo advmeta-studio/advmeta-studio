@@ -1,10 +1,11 @@
-adVmeta Studio v5 — Who Is adVmeta Update
+adVmeta Studio — Final Signature Edition
 
-Upload ALL files in this folder to the ROOT of your GitHub repository.
-Commit directly to the main branch.
+This production package preserves the original v7 Signature layout and includes:
+- Final Alexander Dydasco forklift founder artwork
+- Luxury product-listing case studies
+- Correct “Pharmaceutical Entrepreneur” wording
+- Silver and gold metallic glisten effects
+- Responsive mobile layout
+- Existing Stripe checkout links
 
-Suggested commit message:
-Launch adVmeta Studio v5 About section
-
-Live URL:
-https://advmeta-studio.vercel.app
+Upload index.html and the full assets folder to the root of the GitHub repository connected to Vercel.

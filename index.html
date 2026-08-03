@@ -1,188 +1,63 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#07070a">
-  <meta name="description" content="Meet Alexander Dydasco, the sole designer behind adVmeta Studio. Custom logos, branding, product advertising, and GFX with transparent pricing and secure Stripe checkout.">
-  <meta property="og:title" content="adVmeta Studio — Principle Over Profit">
-  <meta property="og:description" content="Custom logos, branding systems, promotional graphics, and premium GFX.">
-  <meta property="og:image" content="portfolio-ethreal-customs.jpeg">
-  <meta property="og:url" content="https://advmeta-studio.vercel.app">
-  <title>adVmeta Studio — Principle Over Profit</title>
-  <style>
-    :root{--bg:#07070a;--panel:#121218;--panel2:#181821;--text:#fafafe;--muted:#b8b8c4;--line:#30303b;--pink:#ff28bf;--purple:#8a4cff;--blue:#3bc8ff;--gold:#ffc83d;--r:26px}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(circle at 10% 5%,#32113f 0,transparent 28%),radial-gradient(circle at 95% 10%,#102a55 0,transparent 26%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
-    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-    .wrap{width:min(1180px,calc(100% - 28px));margin:auto}
-    nav{position:sticky;top:0;z-index:50;background:rgba(7,7,10,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:950;font-size:1.15rem} .brand img{width:50px;height:50px;border-radius:50%;object-fit:cover}
-    .navlinks{display:flex;gap:22px;font-weight:800;color:#ddd} .cta{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));font-weight:950}
-    .hero{padding:44px 0 30px} .hero-shell{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#21172d,#11131c)}
-    .hero-media{background:#050507;display:flex;align-items:center;justify-content:center;max-height:560px;overflow:hidden} .hero-media img{width:100%;height:auto;object-fit:contain}
-    .hero-copy{padding:38px} .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:950}
-    h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.92;letter-spacing:-.06em;margin:14px 0 20px} .outline{color:transparent;-webkit-text-stroke:1.5px var(--blue)}
-    .lead{color:var(--muted);font-size:1.08rem;max-width:760px} .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--line);font-weight:900} .primary{border:0;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue))}
-    section{padding:70px 0} .title{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1;letter-spacing:-.055em;margin:10px 0 16px}
-    .pricing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px} .card{padding:32px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(160deg,#181820,#0f0f14);position:relative;overflow:hidden}
-    .card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple),var(--blue))}
-    .featured{border-color:#8d741f} .badge{display:inline-block;background:var(--gold);color:#111;border-radius:999px;padding:7px 12px;font-weight:950;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-    .plan{font-size:2.4rem;font-weight:950;margin:12px 0 0} .price{font-size:4rem;font-weight:950;letter-spacing:-.06em;margin:10px 0} .price small{font-size:1rem;color:var(--muted);letter-spacing:0}
-    ul{list-style:none;padding:0;margin:24px 0} li{padding-left:24px;margin:12px 0;color:#ccc;position:relative} li:before{content:"✦";position:absolute;left:0;color:var(--pink)}
-    .card .btn{width:100%}
-    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px} .project{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--panel);transition:.2s}
-    .project:hover{transform:translateY(-4px)} .project img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#050507} .project-copy{padding:20px} .project-copy h3{margin:0 0 6px} .project-copy p{margin:0;color:var(--muted)}
-    .reviews-note{padding:22px;border:1px dashed #555568;border-radius:18px;color:var(--muted);margin-top:24px}
-    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px} .review{padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--panel)} .stars{color:var(--gold);letter-spacing:.12em}
-    .review .draft{display:inline-block;margin-top:14px;padding:5px 9px;border-radius:999px;background:#2a2030;color:#ffc6ef;font-size:.72rem;font-weight:900;text-transform:uppercase}
-    .contact{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:36px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#25162f,#111828)}
-    footer{border-top:1px solid var(--line);padding:30px 0 46px;color:#8f8f9b}
-
-    .about-shell{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center;margin-top:38px}
-    .about-art{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#050507;box-shadow:0 24px 70px rgba(0,0,0,.4)}
-    .about-art img{width:100%;height:auto}
-    .about-copy{padding:34px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(150deg,#181820,#0e0e13)}
-    .about-copy p{color:#c8c8d2;margin:0 0 18px}
-    .about-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}
-    .about-point{padding:16px;border:1px solid #363642;border-radius:16px;background:#111117;font-weight:800}
-    .signature{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-    .signature strong{display:block;font-size:1.2rem}
-    .signature span{color:var(--gold);font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
-
-    @media(max-width:850px){.navlinks{display:none}.pricing,.gallery,.reviews,.contact,.about-shell{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.hero-copy{padding:28px 24px}.card{padding:28px 24px}.price{font-size:3.5rem}.hero-media{max-height:none}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="adVmeta Studio creates premium logos, brand identities, product listing graphics and social media designs with fast, direct service.">
+<meta property="og:title" content="adVmeta Studio — Principle Before Capital">
+<meta property="og:description" content="Design without limits. Premium branding and product-listing design for entrepreneurs building something real.">
+<meta property="og:image" content="assets/advmeta-neon-logo.png">
+<meta property="og:url" content="https://advmetastudio.com">
+<link rel="icon" href="assets/advmeta-neon-logo.png"><title>adVmeta Studio — Principle Before Capital</title>
+<style>
+:root{--bg:#050505;--panel:#0d0d0f;--panel2:#151518;--text:#f8f8f8;--muted:#aaa8af;--line:#29272d;--gold:#ffbf2f;--white:#f4f6ff;--r:28px;--shadow:0 30px 100px #000b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 0,#3c250d 0,transparent 28%),radial-gradient(circle at 100% 20%,#18202e 0,transparent 29%),var(--bg);line-height:1.55}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 30px));margin:auto}.eyebrow{margin:0;color:var(--gold);font-size:.74rem;font-weight:950;letter-spacing:.2em;text-transform:uppercase}.title{font-size:clamp(2.5rem,6.2vw,5.2rem);line-height:.94;letter-spacing:-.065em;margin:12px 0 18px}.lead{color:var(--muted);font-size:1.08rem;max-width:760px}.btn{display:inline-flex;justify-content:center;align-items:center;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--line);font-weight:900;transition:.22s}.btn:hover{transform:translateY(-2px);border-color:#777}.primary{border:0;color:#090909;background:linear-gradient(90deg,#fff3ca,var(--gold),#fff);box-shadow:0 12px 42px #ffbd2f35}nav{position:sticky;top:0;z-index:100;background:#050505e8;backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:950}.brand img{width:48px;height:48px;border-radius:14px;object-fit:cover;box-shadow:0 0 24px #ffbd2f38}.navlinks{display:flex;gap:22px;color:#d9d9dd;font-weight:800}.hero{padding:34px 0 54px}.hero-shell{position:relative;overflow:hidden;border:1px solid #322d28;border-radius:36px;background:linear-gradient(145deg,#17120b,#09090b 48%,#10131a);box-shadow:var(--shadow)}.hero-shell:before{content:"";position:absolute;inset:-30%;background:conic-gradient(from 90deg,transparent,#ffbf2f15,transparent,#fff2,transparent);animation:spin 18s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:650px}.hero-copy{padding:54px}.hero-logo{padding:26px;display:flex;justify-content:center}.hero-logo img{width:min(100%,560px);border-radius:30px;filter:drop-shadow(0 0 30px #ffb0003b)}.hero h1{font-size:clamp(3.2rem,7vw,6.8rem);line-height:.88;letter-spacing:-.075em;margin:14px 0 22px}.outline{color:transparent;-webkit-text-stroke:1.3px #fff;text-shadow:0 0 25px #fff5}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}.stats div{padding:17px;border:1px solid var(--line);border-radius:18px;background:#ffffff07}.stats strong{display:block}.stats span{color:var(--muted);font-size:.85rem}section{padding:84px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:36px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.project{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(155deg,#171719,#0a0a0b);transition:.25s;cursor:pointer}.project:hover{transform:translateY(-6px);border-color:#8a7648}.project img{width:100%;aspect-ratio:16/11;object-fit:cover;background:#090909}.project-copy{padding:22px}.project-copy h3{font-size:1.35rem;margin:0 0 6px}.project-copy p{margin:0;color:var(--muted)}.project .tag{position:absolute;top:16px;left:16px;padding:7px 11px;border-radius:999px;background:#050505d9;border:1px solid #554c3b;font-size:.72rem;font-weight:900;color:#ffd67b}.story{display:grid;grid-template-columns:.86fr 1.14fr;gap:24px}.panel{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(155deg,#171719,#0b0b0c)}.founder{position:relative;overflow:hidden;min-height:580px}.founder img{width:100%;height:100%;object-fit:contain;background:#030305}.founder:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#050505ee)}.founder-label{position:absolute;z-index:2;left:28px;right:28px;bottom:26px}.founder-label h3{font-size:2rem;margin:0}.story-copy{padding:38px}.quote{font-size:2rem;line-height:1.12;font-weight:900;letter-spacing:-.04em}.tribute{position:relative;overflow:hidden;min-height:270px;margin-top:24px;padding:30px;border:1px solid #4e4333;border-radius:24px;display:flex;align-items:end}.tribute:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070707f2,#0707078c),url('assets/marissa-tribute.jpg') center/cover}.tribute>div{position:relative;max-width:690px}.pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.price-card{position:relative;overflow:hidden;padding:31px}.price-card:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),#fff,var(--gold))}.plan{font-size:2.3rem;font-weight:950;margin-top:7px}.price{font-size:4rem;line-height:1;font-weight:950;letter-spacing:-.06em;margin:12px 0}.price small{font-size:.9rem;color:var(--muted);letter-spacing:0}.price-card ul{list-style:none;padding:0;margin:22px 0}.price-card li{position:relative;padding-left:23px;margin:10px 0;color:#d3d1d6}.price-card li:before{content:"✦";position:absolute;left:0;color:var(--gold)}.price-card .btn{width:100%}.contact{padding:42px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;background:linear-gradient(135deg,#251b0d,#111317)}footer{border-top:1px solid var(--line);padding:30px 0 45px;color:#8d8b92}.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:18px;background:#000d;backdrop-filter:blur(15px)}.modal.open{display:flex}.modal-card{width:min(930px,100%);max-height:92vh;overflow:auto;border:1px solid #514833;border-radius:30px;background:#0b0b0d;box-shadow:var(--shadow)}.modal-card img{width:100%;max-height:570px;object-fit:contain;background:#030303}.modal-copy{padding:30px}.modal-copy h2{font-size:2.2rem;margin:5px 0 10px}.close{position:fixed;top:28px;right:28px;width:48px;height:48px;border-radius:50%;border:1px solid #555;background:#111;color:white;font-size:1.5rem;cursor:pointer}.deliverables{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.deliverables span{padding:8px 11px;border-radius:999px;background:#fff1;border:1px solid var(--line);font-size:.82rem}.small{font-size:.9rem;color:var(--muted)}
+/* Signature metallic glisten — preserves the original v7 layout */
+@keyframes glisten{0%{transform:translateX(-180%) skewX(-18deg)}55%,100%{transform:translateX(280%) skewX(-18deg)}}
+.primary,.price-card{isolation:isolate}
+.primary{position:relative;overflow:hidden}
+.primary:after,.price-card:after{content:"";position:absolute;z-index:-1;top:-35%;bottom:-35%;left:-28%;width:22%;pointer-events:none;background:linear-gradient(90deg,transparent,#ffffffb8,transparent);filter:blur(1px);animation:glisten 4.8s ease-in-out infinite}
+.price-card:nth-child(2){border-color:#8e939d;box-shadow:inset 0 0 0 1px #ffffff16,0 18px 65px #cdd7ff12}
+.price-card:nth-child(2):before{background:linear-gradient(90deg,#737985,#fff,#aeb6c6,#fff,#737985)}
+.price-card:nth-child(3){border-color:#7b632a;box-shadow:inset 0 0 0 1px #ffe8a114,0 18px 65px #ffbf2f16}
+.price-card:nth-child(3):before{background:linear-gradient(90deg,#8a6414,#fff0ae,#ffbf2f,#fff7cf,#8a6414)}
+.project img{transition:transform .45s ease,filter .45s ease}.project:hover img{transform:scale(1.025);filter:contrast(1.04) saturate(1.04)}
+.hero-logo img{animation:logoPulse 5s ease-in-out infinite}@keyframes logoPulse{0%,100%{filter:drop-shadow(0 0 24px #ffb00032)}50%{filter:drop-shadow(0 0 42px #fff5) drop-shadow(0 0 24px #ffb00052)}}
+@media(max-width:900px){.navlinks{display:none}.hero-grid,.story,.pricing,.grid,.contact{grid-template-columns:1fr}.hero-copy{padding:34px 24px 22px}.hero-logo{padding:0 20px 30px}.hero-grid{min-height:auto}.stats{grid-template-columns:1fr}.section-head{display:block}.founder{min-height:470px}.story-copy,.contact{padding:28px 23px}.price-card{padding:28px 23px}.modal-copy{padding:24px}.close{top:12px;right:12px}}
+</style>
 </head>
 <body>
-<nav><div class="wrap nav">
-  <a class="brand" href="#top"><img src="advmeta-round.jpeg" alt="adVmeta Studio logo"><span>adVmeta<br>Studio</span></a>
-  <div class="navlinks"><a href="#about">Who I Am</a><a href="#packages">Packages</a><a href="#portfolio">Portfolio</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
-  <a class="cta" href="#packages">Start a Project</a>
-</div></nav>
-
+<nav><div class="wrap nav"><a class="brand" href="#top"><img src="assets/advmeta-neon-logo.png" alt="adVmeta Studio logo"><span>@dVmeta<br>Studio</span></a><div class="navlinks"><a href="#work">Work</a><a href="#story">Story</a><a href="#packages">Packages</a><a href="#contact">Contact</a></div><a class="btn primary" href="#packages">Start a Project</a></div></nav>
 <main id="top">
-<header class="hero"><div class="wrap"><div class="hero-shell">
-  <div class="hero-media"><img src="advmeta-wide.jpeg" alt="adVmeta Studio brand banner"></div>
-  <div class="hero-copy">
-    <p class="eyebrow">Luxury Branding • Logo Design • GFX</p>
-    <h1>Build a brand with <span class="outline">presence.</span></h1>
-    <p class="lead">Custom logos, brand systems, product advertising, and bold promotional graphics designed by adVmeta Studio. Transparent packages. Secure Stripe checkout. Original work.</p>
-    <div class="actions"><a class="btn primary" href="#packages">View Packages</a><a class="btn" href="#about">Meet Alexander</a></div>
-  </div>
-</div></div></header>
-
-
-<section id="about"><div class="wrap">
-  <p class="eyebrow">The Story Behind adVmeta™</p>
-  <h2 class="title">Who is adVmeta?</h2>
-  <p class="lead">A one-person studio built from experience, grief, discipline, and a belief that strong design can give a business confidence.</p>
-
-  <div class="about-shell">
-    <div class="about-art">
-      <img src="who-is-advmeta.png" alt="Who is adVmeta — Alexander Dydasco, founder and designer">
-    </div>
-
-    <article class="about-copy">
-      <p>My name is <strong>Alexander Dydasco</strong>, and I am the sole designer behind <strong>adVmeta Studio™</strong>. Every concept, revision, and client conversation comes directly through me.</p>
-
-      <p>I spent three years working as a personal GFX designer for FaZe Linkzy of FaZe Clan, creating within a fast-moving digital community connected to an audience of more than ten million subscribers. I have also worked both blue-collar and white-collar jobs, giving me respect for the people behind every type of business.</p>
-
-      <p>After losing my wife, design became more than a skill. Building adVmeta gave me a way to move through grief by returning to what I have always done best: drawing, illustrating, and transforming ideas into something people can believe in.</p>
-
-      <p>Design rarely feels like work to me. If California were not so expensive, I would gladly create for the opportunity and a referral. That is why my principle remains simple: value the person first, then build the brand.</p>
-
-      <p>As artificial intelligence reshapes the GFX industry, I continue to focus on hands-on creative direction and professional production using Adobe Illustrator, Adobe Photoshop, Adobe Premiere Pro, Sony Vegas Pro, Final Cut Pro, and speed-art workflows.</p>
-
-      <div class="about-points">
-        <div class="about-point">✏️ Hand-drawn concepts</div>
-        <div class="about-point">🎨 Logo and brand identity</div>
-        <div class="about-point">🎬 Motion and video editing</div>
-        <div class="about-point">🤝 Direct one-on-one support</div>
-      </div>
-
-      <p>I may not have much to my name, but I have my word. When you trust me with your business, my goal is not only to construct an S-tier logo. I want to give you clarity, encouragement, and the confidence to keep building.</p>
-
-      <p><strong>The sky is the limit. Never let someone tell you something is impossible—do the opposite.</strong></p>
-
-      <div class="signature">
-        <strong>Alexander Dydasco</strong>
-        <span>Founder, CEO & Sole Designer — adVmeta Studio™</span>
-      </div>
-    </article>
-  </div>
-</div></section>
-
-<section id="packages"><div class="wrap">
-  <p class="eyebrow">Transparent Pricing</p><h2 class="title">Choose your design level.</h2><p class="lead">One-time purchases processed securely through Stripe.</p>
-  <div class="pricing">
-    <article class="card"><p class="eyebrow">Starter</p><div class="plan">Copper</div><div class="price">$20 <small>one time</small></div><ul><li>3 custom logo concepts</li><li>5 revisions</li><li>High-resolution PNG + JPG files</li><li>Commercial-use license</li><li>First concepts within 24 hours</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/bJeaEX2LjgwHfru0FFfIs00">Choose Copper</a></article>
-    <article class="card featured"><span class="badge">Most Popular</span><div class="plan">Silver</div><div class="price">$50 <small>one time</small></div><ul><li>5 custom logo concepts</li><li>7 revisions</li><li>Transparent PNG, JPG + PDF files</li><li>Social-media profile version</li><li>Commercial-use license</li><li>Priority support and 24-hour delivery</li></ul><a class="btn primary" target="_blank" rel="noopener" href="https://buy.stripe.com/7sY8wP2Lj94f7Z21JJfIs01">Choose Silver</a></article>
-    <article class="card"><p class="eyebrow">Complete Branding</p><div class="plan">Gold</div><div class="price">$100 <small>one time</small></div><ul><li>10 custom logo concepts</li><li>Unlimited revisions</li><li>Primary + secondary logo versions</li><li>Brand color palette + font recommendations</li><li>Social-media profile graphics</li><li>PNG, JPG, PDF + vector source files</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/9B600jclT5S3fru4VVfIs02">Choose Gold</a></article>
-    <article class="card"><p class="eyebrow">Full Identity</p><div class="plan">Platinum</div><div class="price">$200 <small>one time</small></div><ul><li>Unlimited custom logo concepts</li><li>Unlimited revisions</li><li>Complete logo suite and brand identity</li><li>Business-card design</li><li>Social profile + banner graphics</li><li>Brand style guide + source files</li><li>Commercial rights and VIP priority support</li></ul><a class="btn" target="_blank" rel="noopener" href="https://buy.stripe.com/6oU9AT85D0xJcfi2NNfIs03">Choose Platinum</a></article>
-  </div>
-</div></section>
-
-<section id="portfolio"><div class="wrap">
-  <p class="eyebrow">Selected Work</p><h2 class="title">A portfolio built to stand out.</h2><p class="lead">Logo systems, service-business branding, reseller identities, automotive concepts, and product campaigns.</p>
-  <div class="gallery"><article class="project">
-      <img src="portfolio-ski2lana.jpeg" alt="Ski-2-Lana portfolio project" loading="lazy">
-      <div class="project-copy"><h3>Ski-2-Lana</h3><p>Reseller branding • neon winter identity</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-nostalgic-coffee.jpeg" alt="Nostalgic Coffee portfolio project" loading="lazy">
-      <div class="project-copy"><h3>Nostalgic Coffee</h3><p>Mobile coffee-bus logo concepts</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-advmeta-concepts.jpeg" alt="adVmeta Concepts portfolio project" loading="lazy">
-      <div class="project-copy"><h3>adVmeta Concepts</h3><p>Logo exploration and visual systems</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-marcel-watch.jpeg" alt="Marcel Swiss Watch Campaign portfolio project" loading="lazy">
-      <div class="project-copy"><h3>Marcel Swiss Watch Campaign</h3><p>Luxury product storytelling</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-bibi-pro-diver.jpeg" alt="BIBI Pro Diver Campaign portfolio project" loading="lazy">
-      <div class="project-copy"><h3>BIBI Pro Diver Campaign</h3><p>Product ad and promotional design</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-b58-anthy.jpeg" alt="B58 Anthy portfolio project" loading="lazy">
-      <div class="project-copy"><h3>B58 Anthy</h3><p>Automotive-inspired identity</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-watch-gurus.jpeg" alt="The Watch Gurus portfolio project" loading="lazy">
-      <div class="project-copy"><h3>The Watch Gurus</h3><p>Multi-concept brand development</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-ethreal-customs.jpeg" alt="Ethreal Customs portfolio project" loading="lazy">
-      <div class="project-copy"><h3>Ethreal Customs</h3><p>Automotive luxury branding system</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-mm-junk.jpeg" alt="M&amp;M Junk Solutions portfolio project" loading="lazy">
-      <div class="project-copy"><h3>M&amp;M Junk Solutions</h3><p>High-impact service-business advertising</p></div>
-    </article>
-<article class="project">
-      <img src="portfolio-jrp-construction.jpeg" alt="JRP Construction portfolio project" loading="lazy">
-      <div class="project-copy"><h3>JRP Construction</h3><p>Construction logo concept suite</p></div>
-    </article></div>
-</div></section>
-
-<section id="reviews"><div class="wrap">
-  <p class="eyebrow">Client Feedback</p><h2 class="title">Review section ready for verified quotes.</h2>
-  <div class="reviews-note"><strong>Important:</strong> The three cards below are clearly marked as draft copy. Replace each one with a real client quote and name before presenting them as testimonials.</div>
-  <div class="reviews">
-    <article class="review"><div class="stars">★★★★★</div><p>“The concepts captured the direction immediately, and the final logo gave the brand a much stronger presence.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
-    <article class="review"><div class="stars">★★★★★</div><p>“Fast communication, multiple strong options, and revisions that actually followed the feedback.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
-    <article class="review"><div class="stars">★★★★★</div><p>“The finished graphics looked polished across social media, product listings, and promotional materials.”</p><strong>Client name pending</strong><br><span class="draft">Draft copy</span></article>
-  </div>
-</div></section>
-
-<section id="contact"><div class="wrap contact">
-  <div><p class="eyebrow">Project Inquiries</p><h2 class="title">Let’s build something memorable.</h2><p class="lead">After checkout, email your business name, package, colors, slogan, reference images, and preferred direction.</p></div>
-  <a class="btn primary" href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">Email adVmeta Studio</a>
-</div></section>
+<header class="hero"><div class="wrap"><div class="hero-shell"><div class="hero-grid"><div class="hero-copy"><p class="eyebrow">Logo Design • Brand Identity • Product Listings</p><h1>Design without limits. <span class="outline">Presence with purpose.</span></h1><p class="lead">Premium visual identities, social graphics and product-listing designs for entrepreneurs who want to look established from the first impression.</p><div class="actions"><a class="btn primary" href="#work">View Portfolio</a><a class="btn" href="#packages">Choose a Package</a></div><div class="stats"><div><strong>24-hour concepts</strong><span>Fast first-round delivery</span></div><div><strong>Direct collaboration</strong><span>No agency barriers</span></div><div><strong>Organized delivery</strong><span>Ready-to-use ZIP package</span></div></div></div><div class="hero-logo"><img src="assets/advmeta-neon-logo.png" alt="Glowing @dVmeta logo"></div></div></div></div></header>
+<section id="work"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Selected Work</p><h2 class="title">A portfolio built to prove range.</h2></div><p class="lead">Open a project to see the objective, creative direction and deliverables behind the final design.</p></div>
+<p class="eyebrow">Luxury Product Listings</p><div class="grid" style="margin-top:18px;margin-bottom:54px">
+<article class="project" data-title="Vintage Marcel Swiss Pocket Watch" data-desc="A heritage-focused luxury listing designed to turn an uncommon vintage timepiece into a collector-ready presentation. The layout uses warm metallic tones, historical details and strong price hierarchy to communicate craftsmanship and value." data-tags="Product listing,Art direction,Typography,E-commerce graphics"><span class="tag">Luxury Listing</span><img src="assets/marcel-watch.jpg" alt="Vintage Marcel Swiss pocket watch listing"><div class="project-copy"><h3>Vintage Marcel Swiss Pocket Watch</h3><p>Heritage, craftsmanship and collector appeal.</p></div></article>
+<article class="project" data-title="Louis Vuitton Vintage Padlock" data-desc="A polished product-listing concept centered on authenticity, packaging and brand prestige. The composition highlights the vintage cylinder padlock as a premium collectible while keeping the presentation clean, legible and suited for social commerce." data-tags="Luxury listing,Product styling,Social commerce,Visual hierarchy"><span class="tag">Luxury Listing</span><img src="assets/louis-vuitton-padlock.png" alt="Louis Vuitton vintage cylinder padlock listing"><div class="project-copy"><h3>Louis Vuitton Vintage Padlock</h3><p>Premium e-commerce presentation with luxury restraint.</p></div></article>
+</div>
+<p class="eyebrow">Brand Identity & Creative Concepts</p><div class="grid" style="margin-top:18px">
+<article class="project" data-title="Pharmaceutical Entrepreneur" data-desc="An experimental Y2K carnival identity blending theme-park energy, cash-vendor visuals and cartoon illustration. Built as a bold concept study demonstrating character, environmental design and high-impact visual storytelling." data-tags="Concept art,Y2K branding,Illustration,Campaign graphic"><span class="tag">Creative Concept</span><img src="assets/phaenaxexuridal.jpg" alt="Pharmaceutical Entrepreneur carnival concept"><div class="project-copy"><h3>Pharmaceutical Entrepreneur</h3><p>Cartoon carnival energy with a Y2K edge.</p></div></article>
+<article class="project" data-title="Ski-2-Lana" data-desc="A neon winter reseller identity developed around purple, blue and pink. The project combines ski culture, marketplace cues and nostalgic Y2K styling into a recognizable profile-ready brand." data-tags="Logo design,Reseller identity,Social profile,Y2K"><span class="tag">Brand Identity</span><img src="assets/ski2lana.jpg" alt="Ski-2-Lana reseller identity"><div class="project-copy"><h3>Ski-2-Lana</h3><p>Neon winter identity for a modern reseller.</p></div></article>
+<article class="project" data-title="Nostalgic Coffee" data-desc="A family of logo directions for a mobile coffee concept. Each mark explores a different balance of retro warmth, road-ready practicality and memorable storefront appeal." data-tags="Logo system,Coffee branding,Concept development,Typography"><span class="tag">Logo System</span><img src="assets/nostalgic-coffee.jpg" alt="Nostalgic Coffee logo concepts"><div class="project-copy"><h3>Nostalgic Coffee</h3><p>Retro warmth shaped for a mobile coffee brand.</p></div></article>
+<article class="project" data-title="Ethreal Customs" data-desc="A complete automotive-luxury presentation featuring logo variations, apparel applications and vehicle branding. The purple neon visual system gives the business a consistent identity across digital and physical touchpoints." data-tags="Automotive branding,Logo suite,Merchandise,Brand applications"><span class="tag">Brand Identity</span><img src="assets/ethreal-customs.jpg" alt="Ethreal Customs identity"><div class="project-copy"><h3>Ethreal Customs</h3><p>Automotive luxury branding across multiple applications.</p></div></article>
+<article class="project" data-title="M&M Junk Solutions" data-desc="A high-impact service-business graphic designed to communicate scale, speed and reliability at a glance. The composition uses strong contrast and energetic typography to perform well in social feeds and local advertising." data-tags="Service advertising,Social graphic,Typography,Lead generation"><span class="tag">Advertising</span><img src="assets/mm-junk.jpg" alt="M and M Junk Solutions advertisement"><div class="project-copy"><h3>M&amp;M Junk Solutions</h3><p>Bold local-service advertising built to stop the scroll.</p></div></article>
+<article class="project" data-title="JRP Construction" data-desc="A multi-direction logo exploration balancing strength, trade credibility and clean modern presentation. The varied concepts give the client clear options without losing category recognition." data-tags="Logo concepts,Construction branding,Identity exploration,Trade services"><span class="tag">Logo Exploration</span><img src="assets/jrp-construction.jpg" alt="JRP Construction logo concepts"><div class="project-copy"><h3>JRP Construction</h3><p>Strong, versatile identity directions for a trade business.</p></div></article>
+</div></div></section>
+<section id="story"><div class="wrap"><p class="eyebrow">The Person Behind the Work</p><h2 class="title">Built by someone who knows what it means to work.</h2><div class="story"><article class="panel founder"><img src="assets/founder-final.png" alt="Alexander Dydasco, founder and CEO of adVmeta Studio"><div class="founder-label"><h3>Alexander Dydasco</h3><p>Founder • Creative Director • CEO</p></div></article><article class="panel story-copy"><p class="eyebrow">About adVmeta</p><p class="quote">Principle Before Capital.</p><p class="lead">adVmeta Studio was built for entrepreneurs who need professional design without agency barriers. Every project is handled directly, developed with purpose and organized so the final work can be used immediately.</p><p class="lead">The studio combines blue-collar discipline with a white-collar creative mindset: consistency, direct communication and work built to help clients move forward.</p><div class="tribute"><div><p class="eyebrow">Built Through Loss</p><h3 style="font-size:2rem;margin:6px 0">Purpose can survive the hardest chapters.</h3><p class="small">This studio carries the memory of Marissa with quiet respect. The work represents perseverance, integrity and the decision to keep building something meaningful.</p></div></div></article></div></div></section>
+<section id="packages"><div class="wrap"><p class="eyebrow">Clear Packages</p><h2 class="title">Choose your design level.</h2><p class="lead" style="margin-bottom:36px">One-time checkout. Direct communication. No confusing agency process.</p><div class="pricing">
+<article class="panel price-card"><p class="eyebrow">Starter</p><div class="plan">Copper</div><div class="price">$20 <small>one time</small></div><ul><li>3 custom logo concepts</li><li>5 revisions</li><li>High-resolution PNG + JPG</li><li>Commercial-use license</li><li>First concepts within 24 hours</li></ul><a class="btn" href="https://buy.stripe.com/bJeaEX2LjgwHfru0FFfIs00">Choose Copper</a></article>
+<article class="panel price-card"><p class="eyebrow">Most Popular</p><div class="plan">Silver</div><div class="price">$50 <small>one time</small></div><ul><li>5 custom logo concepts</li><li>7 revisions</li><li>Transparent PNG, JPG + PDF</li><li>Social-media profile version</li><li>Priority 24-hour delivery</li></ul><a class="btn primary" href="https://buy.stripe.com/7sY8wP2Lj94f7Z21JJfIs01">Choose Silver</a></article>
+<article class="panel price-card"><p class="eyebrow">Complete Branding</p><div class="plan">Gold</div><div class="price">$100 <small>one time</small></div><ul><li>10 custom logo concepts</li><li>Unlimited revisions</li><li>Primary + secondary versions</li><li>Color and font recommendations</li><li>Social-media graphics</li><li>Source files included</li></ul><a class="btn" href="https://buy.stripe.com/9B600jclT5S3fru4VVfIs02">Choose Gold</a></article>
+<article class="panel price-card"><p class="eyebrow">Full Identity</p><div class="plan">Platinum</div><div class="price">$200 <small>one time</small></div><ul><li>Unlimited concepts and revisions</li><li>Complete brand identity suite</li><li>Business-card design</li><li>Profile + banner graphics</li><li>Brand style guide</li><li>VIP priority support</li></ul><a class="btn" href="https://buy.stripe.com/6oU9AT85D0xJcfi2NNfIs03">Choose Platinum</a></article>
+</div></div></section>
+<section id="contact"><div class="wrap panel contact"><div><p class="eyebrow">Project Inquiries</p><h2 class="title">Bring the idea. I’ll build the presence.</h2><p class="lead">After checkout, send your business name, package, colors, slogan, inspiration and the direction you want to explore.</p></div><a class="btn primary" href="mailto:advmetaofficial@gmail.com?subject=adVmeta%20Studio%20Project%20Inquiry">Email adVmeta Studio</a></div></section>
 </main>
-
-<footer><div class="wrap">© 2026 adVmeta Studio · Principle Over Profit · https://advmetastudio.com
+<footer><div class="wrap">© 2026 adVmeta Studio • Principle Before Capital • advmetastudio.com</div></footer>
+<div class="modal" id="modal" aria-hidden="true"><button class="close" aria-label="Close project">×</button><div class="modal-card"><img id="modalImage" alt=""><div class="modal-copy"><p class="eyebrow">Project Case Study</p><h2 id="modalTitle"></h2><p class="lead" id="modalDesc"></p><div class="deliverables" id="modalTags"></div></div></div></div>
+<script>
+const modal=document.getElementById('modal'),mi=document.getElementById('modalImage'),mt=document.getElementById('modalTitle'),md=document.getElementById('modalDesc'),tags=document.getElementById('modalTags');
+document.querySelectorAll('.project').forEach(card=>card.addEventListener('click',()=>{mi.src=card.querySelector('img').src;mi.alt=card.dataset.title;mt.textContent=card.dataset.title;md.textContent=card.dataset.desc;tags.innerHTML=card.dataset.tags.split(',').map(x=>`<span>${x}</span>`).join('');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}));
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.querySelector('.close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
 </body></html>

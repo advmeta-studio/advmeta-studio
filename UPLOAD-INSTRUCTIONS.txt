@@ -1,0 +1,10 @@
+UPLOAD TO GITHUB / VERCEL
+
+1. Open this unzipped folder.
+2. Upload index.html and the entire assets folder to the ROOT of the advmeta-studio GitHub repository.
+3. Replace files with the same names when GitHub asks.
+4. Commit directly to the main branch.
+5. Vercel will deploy automatically.
+6. After deployment shows Ready, open advmetastudio.com and refresh.
+
+Do not upload the outer folder itself as a nested directory. index.html must remain at the repository root.
